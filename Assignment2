@@ -1,0 +1,128 @@
+<!--Create a Web Page for an Event Management Company "Xena Events" which is conducting a
+hot balloon riding event from Feb 28th 2017 onwards for 5 days.
+The Web Page should have the below:
+1. Heading with appropriate name and logo.
+2. A form where people can register for this event with the below details:
+ a. Name : should allow only alphabets.
+ b. Age : should be equal to or greater than 18.
+ c. Email ID : should be a valid email id format
+ d. City: On clicking on the text box, Should display a list that contains city names as "Rajkot",
+"Vizag" and "Bangalore" but whatever the user enters also should be shown in the list
+ Note: All entries are "mandatory-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body 
+	    {
+                padding: 50px;
+                border-radius: 25px;
+                border: 3px solid RGB(0,0,0);
+            }
+            .logo {
+                width: 50vw;
+		align : center;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+            .eventform {
+                max-width: 95%;
+                margin: 50px auto 0;
+                display: flex;
+                flex-direction: column;
+            }
+            .eventform img {
+                width: 50%;
+                border-radius: 15px;
+            }
+            .eventform form {
+                margin: 20px 0;
+                width: 100%;
+            }
+            .eventform form label {
+                display: block;
+                margin-bottom: .5rem;
+                font-family: Arial;
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: .8rem;
+            }
+            .eventform form input {
+                display: block;
+                font-family: Arial;
+                width: calc(100% - 22px);
+                height: calc(2rem);
+                padding: .375rem 10px;
+                margin-bottom: 1rem;
+                font-size: 1rem;
+                line-height: 1.5;
+                color: rgb(115, 162, 209);
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #ced4da;
+                border-radius: .25rem;
+                transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            }
+            .eventform form input[type="submit"] {
+                background-color: #3297b7;
+                color: #ffffff;
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: inherit;
+                border: none;
+                display: inline-block;
+                width: 50%;
+            }
+        </style>
+    </head>
+
+    <body>
+  <img src="C:\Users\pallago1\Desktop\HTML 5\Xena Events.jfif" height = "400" width="1800" align="center"></img>
+      
+
+        <div class="eventform">
+            <img src="" alt="Hot Air Balloon Event">
+            <form>
+                <label for="name">Name</label>
+                <input  type="text" 
+		        oninvalid="this.setCustomValidity('Not Valid')"
+      			onchange="try{setCustomValidity('')}catch(e){}"
+     			oninput="setCustomValidity(' ')"
+    			pattern="[a-zA-Z]$"
+		        id="name" 
+			placeholder="Name" pattern="[A-Za-z]" required>
+
+                <label for="age">Age</label>
+                <input type="number" 
+			oninvalid="this.setCustomValidity('Not Valid')"
+      			onchange="try{setCustomValidity('')}catch(e){}"
+     			oninput="setCustomValidity(' ')"
+    			pattern="[0-9]$"
+			id="age" placeholder="Age" min="18" required>
+
+                <label for="email">Email ID</label>
+                <input type="email" 
+			oninvalid="this.setCustomValidity('Not Valid')"
+      			onchange="try{setCustomValidity('')}catch(e){}"
+     			oninput="setCustomValidity(' ')"
+    			pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+			id="email" placeholder="Email ID" required>
+
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="City" list="cities" required>
+
+                <datalist id="cities">
+                    <option value="Bangalore">
+                    <option value="Rajkot">
+                    <option value="Vijag">
+                </datalist>
+
+                <input type="submit" value="Submit"></input>
+            </form>
+        </div>
+
+    </body>
+</html>
