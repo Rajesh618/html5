@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment4</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                text-align: center;
+                font-family: 'Calibri';
+            }
+            canvas {
+                border: 4px solid rgb(128, 125, 126)
+                border-radius: 50px;
+                padding: 20px;
+                background-color: rgb(0,0,0);
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1><b>BCCI,/b></h1>
+        <h3><i>T20 Cricket Match Statistics</i></h3>
+
+        <canvas id="bcci" width="1000" height="800"></canvas>
+
+        <script>
+            var a = document.getElementById('bcci');
+            var obj = a.getContext('2d');
+
+            obj.font = '15px Times New Roman'
+            obj.lineWidth = 1.5;
+
+            
+            obj.beginPath();
+            obj.moveTo(280,740);
+            obj.lineTo(280,0);
+            obj.moveTo(480,740);
+            obj.lineTo(480,0);
+            obj.moveTo(680,740);
+            obj.lineTo(680,0);
+            obj.moveTo(880,740);
+            obj.lineTo(880,0);
+            obj.moveTo(80,630);
+            obj.lineTo(1000,630);
+            obj.moveTo(80,530);
+            obj.lineTo(1000,530);
+            obj.moveTo(80,430);
+            obj.lineTo(1000,430);
+            obj.moveTo(80,330);
+            obj.lineTo(1000,330);
+            obj.moveTo(80,230);
+            obj.lineTo(1000,230);
+            obj.moveTo(80,130);
+            obj.lineTo(1000,130);
+            obj.moveTo(80,30);
+            obj.lineTo(1000,30);
+            obj.strokeStyle = 'RGB(128, 125, 126)';
+            obj.stroke();
+
+            obj.beginPath();
+            obj.moveTo(80,800);
+            obj.lineTo(80,0);
+            obj.moveTo(0,740);
+            obj.lineTo(1000,740);
+            obj.strokeStyle = 'RGB(255,255,255)';
+            obj.stroke();
+
+            
+            obj.strokeText('280',0,40);
+            obj.strokeText('240',0,140);
+            obj.strokeText('200',0,240);
+            obj.strokeText('160',0,340);
+            obj.strokeText('120',0,440);
+            obj.strokeText('80',8,540);
+            obj.strokeText('40',8,640);
+
+            obj.strokeText('0',32,790);
+            obj.strokeText('5',272,790);
+            obj.strokeText('10',472,790);
+            obj.strokeText('15',672,790);
+            obj.strokeText('20',872,790);
+
+            obj.beginPath();
+            obj.font = 'bold 11px Times New Roman';
+            obj.fillStyle ='#3297b7' ;
+            obj.fillText('RUNS',100,20);
+            obj.fillText('OVERS',900,720);
+
+           
+            obj.beginPath();
+            obj.strokeStyle = '#3297b7';
+            obj.arc(280,630,2,0,2*Math.PI);
+            obj.arc(480,550,2,0,2*Math.PI); 
+            obj.arc(680,380,2,0,2*Math.PI);
+            //obj.arc(780,164,2,0,2*Math.PI); 
+            obj.stroke();
+        </script>
+
+    </body>
+</html>
